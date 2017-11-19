@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Will be enabled by default afaik, but ipyvolume recommends its verified.
+jupyter nbextension enable --py --sys-prefix widgetsnbextension
+
+# nbgrader - student-mode rather than instructor-mode
+jupyter nbextension disable --sys-prefix create_assignment/main
+jupyter nbextension disable --sys-prefix formgrader/main --section=tree
+jupyter serverextension disable --sys-prefix nbgrader.server_extensions.formgrader
